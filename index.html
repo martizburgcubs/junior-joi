@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Junior JOI 2026</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="announcement" class="announcement">Loading tournament updates…</div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/joi-logo.png" alt="Junior JOI logo">
+      <div><strong>JUNIOR JOI</strong><small>U14 & U15 Basketball Tournament</small></div>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">☰</button>
+    <nav id="main-nav" class="nav">
+      <button class="active" data-page="home">Home</button>
+      <button data-page="fixtures">Fixtures</button>
+      <button data-page="results">Results</button>
+      <button data-page="standings">Standings</button>
+      <button data-page="rankings">Rankings</button>
+      <button data-page="info">Info</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-logo-wrap"><img src="assets/joi-logo.png" alt="Tournament logo"></div>
+        <div>
+          <div class="hero-kicker">MARITZBURG COLLEGE PRESENTS</div>
+          <h1>Junior <span>JOI</span></h1>
+          <h2>U14 & U15 BASKETBALL TOURNAMENT</h2>
+          <div class="hero-meta">
+            <span>📅 1–3 October 2026</span>
+            <span>📍 Maritzburg College & Girls High School</span>
+          </div>
+          <p>Three days of top youth basketball competition featuring leading schools from across the country. Compete. Learn. Lead.</p>
+          <button class="cta" data-goto="fixtures">VIEW FIXTURES →</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="grid4">
+          <article class="card card-red"><h3><span>📅 UPCOMING GAMES</span><small>View All →</small></h3><div id="upcoming" class="card-body">Loading…</div></article>
+          <article class="card card-blue"><h3><span>🏆 LATEST RESULTS</span><small>View All →</small></h3><div id="latest-results" class="card-body">Loading…</div></article>
+          <article class="card card-green">
+            <h3><span>📊 POOL STANDINGS</span><small>View All →</small></h3>
+            <div class="pool-tabs">
+              <button class="pool-tab active pool-a">U15 POOL A</button>
+              <button class="pool-tab pool-b">U15 POOL B</button>
+              <button class="pool-tab pool-c">U14 POOL A</button>
+              <button class="pool-tab pool-d">U14 POOL B</button>
+            </div>
+            <div id="home-standings" class="card-body">Loading…</div>
+          </article>
+          <article class="card card-purple"><h3><span>☆ FINAL RANKINGS</span><small>View All →</small></h3><div id="home-rankings" class="card-body">Loading…</div></article>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="stat-icon">📅</div><strong>3 DAYS</strong><small>OF COMPETITION</small></div>
+          <div class="stat"><div class="stat-icon">👥</div><strong>19 SCHOOLS</strong><small>U14 & U15</small></div>
+          <div class="stat"><div class="stat-icon">📍</div><strong>2 VENUES</strong><small>FOUR COURTS</small></div>
+          <div class="stat"><div class="stat-icon">🏆</div><strong>ONE GOAL</strong><small>CHAMPIONSHIP GLORY</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fixtures" class="page content"><h1>Fixtures</h1><div class="toolbar">
+      <label>Division<select id="filter-division"><option value="">All</option><option>U14</option><option>U15</option></select></label>
+      <label>Date<input id="filter-date" type="date"></label>
+      <label>Venue<select id="filter-venue"><option value="">All venues</option><option>APH 1</option><option>APH 2</option><option>GHS 1</option><option>GHS 2</option></select></label>
+      <label>Search<input id="filter-search" placeholder="School name"></label>
+    </div><div id="fixtures-table"></div></section>
+
+    <section id="results" class="page content"><h1>Results</h1><div id="results-table"></div></section>
+    <section id="standings" class="page content"><h1>Pool Standings</h1><div id="standings-content"></div></section>
+    <section id="rankings" class="page content"><h1>Final Rankings</h1><div id="rankings-content"></div></section>
+    <section id="info" class="page content"><div class="card card-red"><h3>Tournament Information</h3><div class="card-body">
+      <p><strong>Dates:</strong> 1–3 October 2026</p><p><strong>Venues:</strong> Maritzburg College and Girls High School</p>
+      <p>Teams should report 30 minutes before tip-off.</p>
+    </div></div></section>
+  </main>
+
+  <script type="module" src="js/public.js"></script>
+</body>
+</html>
