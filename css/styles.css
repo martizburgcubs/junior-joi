@@ -693,3 +693,246 @@ tbody tr:hover td{background:#fff9fa}
   .stats{grid-template-columns:1fr 1fr}
   .stat{min-height:104px;padding:14px 8px}
 }
+
+/* ==========================================================
+   JUNIOR JOI — ARENA HOME HERO
+   HOME PAGE ONLY
+   Keeps fixtures/results/standings/admin untouched
+   ========================================================== */
+
+#page-home .hero{
+  min-height:470px;
+  display:block;
+  position:relative;
+  overflow:hidden;
+  padding:54px clamp(24px,5vw,72px);
+  color:#fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,8,18,.98) 0%,
+      rgba(3,8,18,.93) 24%,
+      rgba(3,8,18,.70) 47%,
+      rgba(3,8,18,.28) 72%,
+      rgba(3,8,18,.12) 100%
+    ),
+    url("../assets/joi-arena-hero.jpg") center center / cover no-repeat;
+
+  border-bottom:4px solid #cf0b18;
+}
+
+/* Remove the old large blurry logo from the HOME hero only */
+#page-home .hero > img,
+#page-home .hero .hero-logo-wrap{
+  display:none !important;
+}
+
+/* Main hero content */
+#page-home .hero > div{
+  position:relative;
+  z-index:2;
+  width:min(590px,100%);
+  max-width:100%;
+}
+
+/* MARITZBURG COLLEGE PRESENTS */
+#page-home .hero-kicker{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+/* JUNIOR JOI */
+#page-home .hero h1{
+  color:#fff;
+  font-size:clamp(62px,7vw,102px);
+  line-height:.84;
+  margin:0 0 16px;
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+  text-shadow:0 5px 22px rgba(0,0,0,.30);
+}
+
+#page-home .hero h1 span{
+  display:block;
+  color:#e31322;
+}
+
+/* Tournament subtitle */
+#page-home .hero h2{
+  margin:0 0 18px;
+  color:#fff;
+  font-size:clamp(18px,2vw,25px);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  max-width:520px;
+}
+
+/* Date / venue / age group blocks */
+#page-home .hero-meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:20px 0;
+  color:#fff;
+}
+
+#page-home .hero-meta > *{
+  background:rgba(7,15,28,.68);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+  border-radius:9px;
+  padding:9px 12px;
+  box-shadow:0 5px 16px rgba(0,0,0,.12);
+}
+
+/* Hero paragraph */
+#page-home .hero p{
+  max-width:600px;
+  color:#f0f3f7;
+  line-height:1.55;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+
+/* View Fixtures button */
+#page-home .cta{
+  margin-top:8px;
+  background:linear-gradient(180deg,#e41423,#bd0814);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:9px;
+  padding:14px 22px;
+  font-weight:900;
+  box-shadow:0 9px 24px rgba(196,8,20,.32);
+}
+
+/* Make the area below the arena clean and light */
+#page-home .content{
+  background:linear-gradient(180deg,#f7f9fb 0%,#eef2f6 100%);
+  padding-top:18px;
+}
+
+/* Keep dashboard cards tight to the hero */
+#page-home .grid4{
+  margin-top:-5px;
+}
+
+/* Premium white top header */
+.site-header{
+  background:#fff;
+  color:#111827;
+  border-bottom:1px solid #e2e7ec;
+  box-shadow:0 4px 16px rgba(16,24,40,.06);
+}
+
+.site-header .brand strong{
+  color:#111827;
+}
+
+.site-header .brand small{
+  color:#697386;
+}
+
+.site-header .nav button{
+  color:#263243;
+}
+
+.site-header .nav button.active{
+  color:#cf0b18;
+  border-color:#cf0b18;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:760px){
+
+  #page-home .hero{
+    min-height:520px;
+    padding:28px 18px 34px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3,8,18,.88) 0%,
+        rgba(3,8,18,.72) 48%,
+        rgba(3,8,18,.93) 100%
+      ),
+      url("../assets/joi-arena-hero.jpg") 60% center / cover no-repeat;
+  }
+
+  #page-home .hero > div{
+    width:100%;
+  }
+
+  #page-home .hero h1{
+    font-size:clamp(54px,18vw,76px);
+    line-height:.86;
+    max-width:330px;
+  }
+
+  #page-home .hero h2{
+    font-size:18px;
+    max-width:340px;
+  }
+
+  #page-home .hero-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    max-width:360px;
+  }
+
+  #page-home .hero-meta > *{
+    padding:8px 9px;
+    font-size:12px;
+  }
+
+  #page-home .hero p{
+    max-width:360px;
+    font-size:14px;
+  }
+
+  #page-home .cta{
+    min-height:46px;
+  }
+
+  .site-header{
+    background:#fff;
+  }
+
+  .nav{
+    background:#fff;
+    border-top:1px solid #e7ebef;
+  }
+
+  .nav button{
+    color:#263243 !important;
+  }
+}
+
+@media(max-width:430px){
+
+  #page-home .hero{
+    min-height:550px;
+    background-position:62% center;
+  }
+
+  #page-home .hero h1{
+    font-size:54px;
+  }
+
+  #page-home .hero-meta{
+    grid-template-columns:1fr;
+    max-width:250px;
+  }
+}
+
