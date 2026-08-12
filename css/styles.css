@@ -220,29 +220,30 @@
 }
 
 /* ==========================================================
-   JUNIOR JOI 2026 — PREMIUM LIGHT TOURNAMENT THEME
-   Public-site visual override only. Existing JS/data untouched.
+   JUNIOR JOI — FINAL ARENA HOME THEME
+   COMPLETE PUBLIC SITE OVERRIDE
    ========================================================== */
 
 :root{
-  --joi-red:#d10b18;
-  --joi-red-dark:#a90712;
-  --joi-navy:#101c31;
-  --joi-ink:#111827;
-  --joi-muted:#667085;
-  --joi-bg:#f4f6f8;
-  --joi-panel:#ffffff;
-  --joi-line:#e2e7ec;
+  --red:#d10b18;
+  --red-dark:#a90712;
+  --navy:#0b1728;
+  --ink:#111827;
+  --muted:#667085;
+  --bg:#f3f5f7;
+  --panel:#ffffff;
+  --line:#e2e7ec;
 }
 
-html{background:var(--joi-bg)}
+html{
+  background:var(--bg);
+}
 
 body{
   background:
-    radial-gradient(circle at 92% 9%,rgba(209,11,24,.055),transparent 23%),
-    radial-gradient(circle at 8% 58%,rgba(18,63,149,.045),transparent 24%),
-    linear-gradient(180deg,#f8f9fb 0%,#f1f4f7 100%);
-  color:var(--joi-ink);
+    radial-gradient(circle at 92% 7%,rgba(209,11,24,.05),transparent 24%),
+    linear-gradient(180deg,#f8fafc 0%,#eef2f6 100%);
+  color:var(--ink);
   min-height:100vh;
 }
 
@@ -251,537 +252,138 @@ body{
   background:linear-gradient(90deg,#ad0711,#e10c19,#ad0711);
   color:#fff;
   padding:9px 16px;
+  font-weight:700;
   box-shadow:0 2px 10px rgba(209,11,24,.14);
-  font-weight:600;
-  letter-spacing:.01em;
 }
 
-/* Header / nav */
+/* Header */
 .site-header{
-  background:rgba(255,255,255,.97);
-  color:var(--joi-ink);
-  border-bottom:1px solid var(--joi-line);
-  box-shadow:0 5px 18px rgba(16,24,40,.055);
-  backdrop-filter:blur(12px);
+  background:#fff;
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 18px rgba(16,24,40,.06);
 }
 
 .brand img{
   width:58px;
   height:58px;
-  filter:drop-shadow(0 3px 7px rgba(0,0,0,.16));
+  object-fit:contain;
+  filter:drop-shadow(0 3px 7px rgba(0,0,0,.14));
 }
 
-.brand strong{color:#111827}
-.brand small{color:#697386}
+.brand strong{
+  color:#111827;
+  font-weight:900;
+}
+
+.brand small{
+  color:#697386;
+}
 
 .nav button{
   color:#283342;
-  font-weight:700;
-  padding:12px 3px;
+  font-weight:800;
 }
 
-.nav button:hover{color:var(--joi-red)}
+.nav button:hover{
+  color:var(--red);
+}
+
 .nav button.active{
-  color:var(--joi-red);
-  border-color:var(--joi-red);
+  color:var(--red);
+  border-color:var(--red);
 }
 
 .menu-toggle{
   background:#fff;
   border:1px solid #e4b8bc;
-  color:var(--joi-red);
-}
-
-/* Home hero */
-.hero{
-  position:relative;
-  isolation:isolate;
-  background:
-    radial-gradient(circle at 78% 34%,rgba(209,11,24,.09),transparent 19%),
-    radial-gradient(circle at 91% 72%,rgba(16,28,49,.07),transparent 25%),
-    linear-gradient(120deg,#ffffff 0%,#f8fafc 62%,#eef2f6 100%);
-  color:var(--joi-ink);
-  grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);
-  gap:34px;
-  padding:48px clamp(26px,5vw,72px);
-  min-height:440px;
-  border-bottom:1px solid #e8ebef;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:auto -9% -44% 37%;
-  height:73%;
-  z-index:-1;
-  border-radius:50% 0 0 0;
-  background:
-    linear-gradient(169deg,
-      transparent 0 53%,
-      rgba(209,11,24,.92) 53.4% 57%,
-      #fff 57.3% 59%,
-      rgba(16,28,49,.96) 59.3% 71%,
-      transparent 71.4%);
-  opacity:.98;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:310px;
-  height:310px;
-  right:7%;
-  top:9%;
-  border:2px solid rgba(18,63,149,.055);
-  border-radius:50%;
-  z-index:-2;
-  box-shadow:
-    inset 90px 0 0 -88px rgba(18,63,149,.045),
-    inset -90px 0 0 -88px rgba(209,11,24,.045);
-}
-
-.hero img{
-  order:2;
-  width:245px;
-  max-width:76%;
-  justify-self:center;
-  align-self:center;
-  background:#fff;
-  border-radius:18px;
-  padding:12px;
-  border:1px solid #eceff3;
-  box-shadow:0 20px 46px rgba(16,24,40,.13);
-  filter:drop-shadow(0 7px 12px rgba(209,11,24,.13));
-}
-
-.hero > div{order:1;align-self:center}
-
-.hero-kicker{
-  color:#526071;
-  font-weight:700;
-  letter-spacing:.105em;
-}
-
-.hero h1{
-  color:#111827;
-  font-size:clamp(54px,6vw,82px);
-  margin:7px 0 0;
-  letter-spacing:-.035em;
-}
-
-.hero h1 span{color:var(--joi-red)}
-
-.hero h2{
-  color:var(--joi-red);
-  font-size:clamp(21px,2vw,29px);
-  margin:14px 0 19px;
-  letter-spacing:.01em;
-}
-
-.hero-meta{
-  color:#202938;
-  gap:20px;
-}
-
-.hero p{
-  color:#475467;
-  max-width:690px;
-}
-
-.cta{
-  background:linear-gradient(180deg,#e31320,#bf0914);
-  border:0;
-  border-radius:9px;
-  padding:14px 22px;
-  box-shadow:0 8px 20px rgba(209,11,24,.18);
-}
-
-/* All public page sections */
-.content{
-  background:transparent;
-  padding:26px clamp(16px,2vw,28px) 40px;
-}
-
-.content>h1{
-  color:#111827;
-  font-size:34px;
-  margin:10px 0 22px;
-  letter-spacing:-.02em;
-}
-
-.content>h1::after{
-  content:"";
-  display:block;
-  width:68px;
-  height:4px;
-  background:var(--joi-red);
-  border-radius:99px;
-  margin-top:11px;
-}
-
-/* Dashboard cards */
-.grid4{gap:16px}
-
-.card{
-  background:rgba(255,255,255,.98);
-  border:1px solid #e1e6eb;
-  border-radius:14px;
-  box-shadow:0 10px 28px rgba(16,24,40,.075);
-}
-
-.card h3{
-  padding:14px 16px;
-  font-size:17px;
-}
-
-.card-body{padding:14px 16px}
-
-.item{border-color:#edf0f2}
-
-.card-red h3{background:linear-gradient(100deg,#df0b18,#b80813)}
-.card-blue h3{background:linear-gradient(100deg,#2254b7,#163b88)}
-.card-green h3{background:linear-gradient(100deg,#159146,#0b6f35)}
-.card-purple h3{background:linear-gradient(100deg,#9125a8,#641578)}
-
-.time-pill{
-  background:linear-gradient(#dd1220,#bf0914);
-  border-radius:7px;
-}
-
-.match-chip{
-  background:#f0f2f4;
-  color:#53606e;
-}
-
-.score-box{box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
-
-/* Pool tabs */
-.pool-tabs{
-  background:#fbfcfd;
-  border-color:#e5e8eb;
-}
-
-.pool-tab{
-  background:#f0f2f4;
-  color:#4a5565;
-  border:1px solid #e2e6ea;
-}
-
-.pool-tab.active.pool-a{
-  background:#0b7b35;
-  border-color:#0b7b35;
-}
-
-/* Page toolbar / filters */
-.toolbar{
-  background:#fff;
-  border:1px solid var(--joi-line);
-  border-radius:14px;
-  padding:17px;
-  box-shadow:0 8px 24px rgba(16,24,40,.06);
-}
-
-.toolbar label{color:#344054}
-
-.toolbar input,
-.toolbar select{
-  background:#fff;
-  border:1px solid #cfd6dd;
-  border-radius:9px;
-  color:#172033;
-  padding:11px;
-}
-
-.toolbar input:focus,
-.toolbar select:focus{
-  outline:none;
-  border-color:#d10b18;
-  box-shadow:0 0 0 3px rgba(209,11,24,.08);
-}
-
-/* Public tables */
-.table-wrap{
-  background:#fff;
-  border:1px solid var(--joi-line);
-  border-radius:14px;
-  box-shadow:0 9px 26px rgba(16,24,40,.06);
-}
-
-table{background:#fff}
-
-th{
-  background:linear-gradient(90deg,#c90b17,#df1421);
-  color:#fff;
-  padding:13px 12px;
-  letter-spacing:.01em;
-}
-
-td{
-  background:#fff;
-  color:#172033;
-  padding:13px 12px;
-  border-bottom:1px solid #e8ecf0;
-}
-
-tbody tr:hover td{background:#fff9fa}
-
-.status{
-  background:#eef1f3;
-  color:#344054;
-  font-weight:700;
-}
-
-.status.completed,
-.status.Completed{
-  background:#dcf7e5;
-  color:#137333;
-}
-
-.status.scheduled,
-.status.Scheduled{
-  background:#fff2cf;
-  color:#a15a00;
-}
-
-/* Standings / rankings */
-.standing-row,
-.rank-row{border-color:#e9edf0}
-
-.standings-full-card,
-.rankings-full-card{
-  background:#fff;
-}
-
-/* Home stats strip made light/premium */
-.stats{
-  background:#fff;
-  border:1px solid #e0e5ea;
-  border-radius:14px;
-  box-shadow:0 9px 26px rgba(16,24,40,.06);
-}
-
-.stat{
-  color:#182230;
-  border-right:1px solid #e6eaee;
-  min-height:126px;
-}
-
-.stat:nth-child(1),
-.stat:nth-child(2),
-.stat:nth-child(3),
-.stat:nth-child(4){color:#182230}
-
-.stat-icon{
-  color:var(--joi-red);
-  border-color:#f0c3c7;
-  background:#fff5f6;
-  box-shadow:none;
-}
-
-.stat small{color:#667085}
-
-/* School badge presentation */
-.school-badge-img{
-  filter:drop-shadow(0 2px 3px rgba(0,0,0,.13));
-}
-
-/* Footer-like breathing room on long pages */
-.page{padding-bottom:18px}
-
-/* Mobile */
-@media(max-width:1000px){
-  .hero{
-    grid-template-columns:minmax(0,1fr) 270px;
-    text-align:left;
-    padding:38px 28px;
-  }
-  .hero img{margin:0;max-width:80%}
-}
-
-@media(max-width:760px){
-  body{
-    background:linear-gradient(180deg,#f8f9fb,#f1f4f7);
-  }
-
-  .site-header{
-    background:#fff;
-    padding:11px 14px;
-  }
-
-  .nav{
-    background:#fff;
-    border-top:1px solid #e7eaed;
-    box-shadow:0 10px 20px rgba(16,24,40,.08);
-  }
-
-  .nav button{
-    color:#273344;
-    padding:11px 4px;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-    min-height:auto;
-    padding:28px 18px 34px;
-    gap:12px;
-    text-align:left;
-  }
-
-  .hero::before{
-    inset:auto -35% -49% 12%;
-    height:55%;
-    opacity:.75;
-  }
-
-  .hero::after{
-    width:210px;
-    height:210px;
-    right:-13%;
-    top:3%;
-  }
-
-  .hero > div{order:1}
-  .hero img{
-    order:2;
-    width:155px;
-    max-width:42vw;
-    justify-self:end;
-    margin-top:-8px;
-    padding:8px;
-    border-radius:13px;
-  }
-
-  .hero h1{
-    font-size:49px;
-    line-height:.95;
-  }
-
-  .hero h2{font-size:20px}
-  .hero p{font-size:14px}
-  .hero-meta{gap:8px 14px;font-size:13px}
-
-  .content{padding:17px 11px 30px}
-  .content>h1{font-size:29px;margin-left:3px}
-  .grid4{gap:12px}
-
-  .toolbar{
-    grid-template-columns:1fr;
-    padding:13px;
-  }
-
-  .table-wrap{
-    border-radius:12px;
-  }
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:480px){
-  .brand img{width:54px;height:54px}
-  .brand strong{font-size:20px}
-  .hero h1{font-size:43px}
-  .hero h2{font-size:18px}
-  .hero img{
-    width:135px;
-    max-width:41vw;
-  }
-
-  .card{border-radius:12px}
-  .card h3{font-size:16px}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat{min-height:104px;padding:14px 8px}
+  color:var(--red);
 }
 
 /* ==========================================================
-   JUNIOR JOI — ARENA HOME HERO
-   Keeps existing Supabase/public.js functionality untouched.
+   ARENA HERO
    ========================================================== */
 
-/* Keep all internal pages light */
-body{
-  background:#f4f6f8;
-  color:#111827;
-}
-
-/* HOME HERO ONLY */
-#page-home .hero{
-  min-height:470px;
-  display:block;
+.hero{
   position:relative;
   overflow:hidden;
+  display:block;
+  min-height:480px;
   padding:54px clamp(24px,5vw,72px);
   color:#fff;
   background:
-    linear-gradient(90deg,
+    linear-gradient(
+      90deg,
       rgba(3,8,18,.98) 0%,
-      rgba(3,8,18,.93) 24%,
-      rgba(3,8,18,.68) 47%,
-      rgba(3,8,18,.22) 72%,
-      rgba(3,8,18,.12) 100%),
-    url("../assets/joi-arena-hero.jpg") center center / cover no-repeat;
-  border-bottom:4px solid #cf0b18;
+      rgba(3,8,18,.94) 22%,
+      rgba(3,8,18,.76) 43%,
+      rgba(3,8,18,.36) 68%,
+      rgba(3,8,18,.10) 100%
+    ),
+    url("../assets/joi-arena-hero.jpg") center center / cover no-repeat !important;
+  border-bottom:4px solid var(--red);
 }
 
-/* Remove the old large/blurry hero logo but keep the small header brand logo */
-#page-home .hero > img,
-#page-home .hero .hero-logo-wrap{
-  display:none!important;
+/* Hide the old large hero logo/image */
+.hero > img,
+.hero .hero-logo-wrap{
+  display:none !important;
 }
 
-/* Make the text column feel like the approved arena concept */
-#page-home .hero > div{
+/* Main text block */
+.hero > div{
   position:relative;
   z-index:2;
   width:min(590px,100%);
   max-width:100%;
+  text-align:left;
 }
 
-#page-home .hero-kicker{
+.hero-kicker{
   color:#fff;
   font-size:14px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.14em;
   text-transform:uppercase;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
-#page-home .hero h1{
+.hero h1{
   color:#fff;
   font-size:clamp(62px,7vw,102px);
-  line-height:.82;
-  margin:0 0 15px;
+  line-height:.84;
+  margin:0 0 16px;
   font-weight:900;
   font-style:italic;
   letter-spacing:-.055em;
   text-transform:uppercase;
-  text-shadow:0 5px 22px rgba(0,0,0,.28);
+  text-shadow:0 5px 22px rgba(0,0,0,.30);
 }
 
-#page-home .hero h1 span{
+.hero h1 span{
   display:block;
   color:#e31322;
 }
 
-#page-home .hero h2{
-  margin:0 0 18px;
+.hero h2{
   color:#fff;
   font-size:clamp(18px,2vw,25px);
   text-transform:uppercase;
   letter-spacing:.04em;
-  max-width:520px;
+  margin:0 0 18px;
+  max-width:540px;
 }
 
-#page-home .hero-meta{
+.hero-meta{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
   margin:20px 0;
   color:#fff;
+  font-weight:800;
 }
 
-#page-home .hero-meta > *{
+.hero-meta > *{
   background:rgba(7,15,28,.68);
   border:1px solid rgba(255,255,255,.18);
   backdrop-filter:blur(8px);
@@ -790,14 +392,14 @@ body{
   box-shadow:0 5px 16px rgba(0,0,0,.12);
 }
 
-#page-home .hero p{
+.hero p{
   max-width:600px;
   color:#f0f3f7;
   line-height:1.55;
   text-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 
-#page-home .cta{
+.cta{
   margin-top:8px;
   background:linear-gradient(180deg,#e41423,#bd0814);
   color:#fff;
@@ -808,112 +410,372 @@ body{
   box-shadow:0 9px 24px rgba(196,8,20,.32);
 }
 
-/* Dashboard area below hero */
-#page-home .content{
+/* ==========================================================
+   PUBLIC CONTENT / DASHBOARD
+   ========================================================== */
+
+.content{
   background:linear-gradient(180deg,#f7f9fb 0%,#eef2f6 100%);
-  padding-top:18px;
+  color:var(--ink);
+  padding:20px;
 }
 
-#page-home .grid4{
-  margin-top:-5px;
-}
-
-/* Header remains clean and premium */
-.site-header{
-  background:#fff;
+.content>h1{
   color:#111827;
-  border-bottom:1px solid #e2e7ec;
-  box-shadow:0 4px 16px rgba(16,24,40,.06);
+  font-size:34px;
+  margin:10px 0 22px;
 }
 
-.site-header .brand strong{color:#111827}
-.site-header .brand small{color:#697386}
-
-.site-header .nav button{
-  color:#263243;
+.content>h1::after{
+  content:"";
+  display:block;
+  width:68px;
+  height:4px;
+  margin-top:10px;
+  border-radius:999px;
+  background:var(--red);
 }
 
-.site-header .nav button.active{
-  color:#cf0b18;
-  border-color:#cf0b18;
+.grid4{
+  gap:16px;
 }
 
-/* Mobile — crop arena to remain dramatic without making text tiny */
-@media(max-width:760px){
-  #page-home .hero{
-    min-height:520px;
-    padding:28px 18px 34px;
-    background:
-      linear-gradient(180deg,
-        rgba(3,8,18,.90) 0%,
-        rgba(3,8,18,.78) 48%,
-        rgba(3,8,18,.92) 100%),
-      url("../assets/joi-arena-hero.jpg") 58% center / cover no-repeat;
+.card{
+  background:#fff;
+  border:1px solid #e1e6eb;
+  border-radius:14px;
+  box-shadow:0 10px 28px rgba(16,24,40,.075);
+}
+
+.card h3{
+  padding:14px 16px;
+}
+
+.card-red h3{
+  background:linear-gradient(100deg,#df0b18,#b80813);
+}
+
+.card-blue h3{
+  background:linear-gradient(100deg,#15243a,#07111f);
+}
+
+.card-green h3{
+  background:linear-gradient(100deg,#159146,#0b6f35);
+}
+
+.card-purple h3{
+  background:linear-gradient(100deg,#9125a8,#641578);
+}
+
+.card-body{
+  padding:14px 16px;
+}
+
+.item{
+  border-color:#edf0f2;
+}
+
+.match-chip{
+  background:#f0f2f4;
+  color:#53606e;
+}
+
+.time-pill{
+  background:linear-gradient(#dd1220,#bf0914);
+  border-radius:7px;
+}
+
+/* Pool tabs */
+.pool-tabs{
+  background:#fbfcfd;
+  border-color:#e5e8eb;
+}
+
+.pool-tab{
+  background:#f0f2f4;
+  border:1px solid #e2e6ea;
+  color:#4a5565;
+}
+
+.pool-tab.active.pool-a{
+  background:#0b7b35;
+  border-color:#0b7b35;
+  color:#fff;
+}
+
+/* Stats */
+.stats{
+  background:#fff;
+  border:1px solid #e0e5ea;
+  border-radius:14px;
+  box-shadow:0 9px 26px rgba(16,24,40,.06);
+}
+
+.stat{
+  color:#182230;
+  border-right:1px solid #e6eaee;
+}
+
+.stat-icon{
+  color:var(--red);
+  border-color:#f0c3c7;
+  background:#fff5f6;
+  box-shadow:none;
+}
+
+.stat small{
+  color:#667085;
+}
+
+/* Filters */
+.toolbar{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(16,24,40,.06);
+}
+
+.toolbar label{
+  color:#344054;
+}
+
+.toolbar input,
+.toolbar select{
+  background:#fff;
+  border:1px solid #cfd6dd;
+  color:#172033;
+}
+
+.toolbar input:focus,
+.toolbar select:focus{
+  outline:none;
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(209,11,24,.08);
+}
+
+/* Tables */
+.table-wrap{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 9px 26px rgba(16,24,40,.06);
+}
+
+table{
+  background:#fff;
+}
+
+th{
+  background:linear-gradient(90deg,#c90b17,#df1421);
+  color:#fff;
+  padding:13px 12px;
+}
+
+td{
+  background:#fff;
+  color:#172033;
+  border-bottom:1px solid #e8ecf0;
+  padding:13px 12px;
+}
+
+tbody tr:hover td{
+  background:#fff9fa;
+}
+
+.status{
+  background:#eef1f3;
+  color:#344054;
+  font-weight:700;
+}
+
+/* Keep real school badges crisp */
+.school-badge-img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.13));
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media(max-width:1000px){
+  .grid4{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  #page-home .hero > div{
+  .hero{
+    min-height:470px;
+  }
+
+  .hero > div{
+    width:min(560px,100%);
+  }
+
+  .toolbar{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media(max-width:760px){
+
+  .site-header{
+    position:relative;
+    padding:11px 14px;
+    background:#fff;
+  }
+
+  .brand img{
+    width:54px;
+    height:54px;
+  }
+
+  .brand strong{
+    font-size:20px;
+  }
+
+  .brand small{
+    font-size:11px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    background:#fff;
+    padding:12px 18px;
+    flex-direction:column;
+    border-top:1px solid #e7ebef;
+    box-shadow:0 10px 20px rgba(16,24,40,.08);
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .nav button{
+    color:#263243 !important;
+    text-align:left;
+    padding:11px 4px;
+  }
+
+  .hero{
+    min-height:550px;
+    padding:28px 18px 34px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3,8,18,.90) 0%,
+        rgba(3,8,18,.72) 44%,
+        rgba(3,8,18,.94) 100%
+      ),
+      url("../assets/joi-arena-hero.jpg") 62% center / cover no-repeat !important;
+  }
+
+  .hero > div{
     width:100%;
   }
 
-  #page-home .hero h1{
+  .hero h1{
     font-size:clamp(54px,18vw,76px);
     line-height:.86;
     max-width:330px;
   }
 
-  #page-home .hero h2{
+  .hero h2{
     font-size:18px;
     max-width:340px;
   }
 
-  #page-home .hero-meta{
+  .hero-meta{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:8px;
     max-width:360px;
   }
 
-  #page-home .hero-meta > *{
+  .hero-meta > *{
     padding:8px 9px;
     font-size:12px;
   }
 
-  #page-home .hero p{
+  .hero p{
     max-width:360px;
     font-size:14px;
   }
 
-  #page-home .cta{
-    width:auto;
+  .cta{
     min-height:46px;
   }
 
-  .site-header{
-    background:#fff;
+  .grid4{
+    grid-template-columns:1fr;
   }
 
-  .nav{
-    background:#fff;
-    border-top:1px solid #e7ebef;
+  .content{
+    padding:14px 11px 30px;
   }
 
-  .nav button{
-    color:#263243!important;
+  .content>h1{
+    font-size:29px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .toolbar{
+    grid-template-columns:1fr;
   }
 }
 
-@media(max-width:430px){
-  #page-home .hero{
-    min-height:550px;
-    background-position:62% center;
+/* ==========================================================
+   SMALL PHONES
+   ========================================================== */
+
+@media(max-width:480px){
+
+  .hero{
+    min-height:570px;
+    background-position:64% center !important;
   }
 
-  #page-home .hero h1{
+  .hero h1{
     font-size:54px;
   }
 
-  #page-home .hero-meta{
+  .hero-meta{
     grid-template-columns:1fr;
-    max-width:250px;
+    max-width:255px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .match-line{
+    grid-template-columns:54px minmax(0,1fr) auto minmax(0,1fr);
+    gap:6px;
+  }
+
+  .team-badge{
+    width:30px;
+    height:34px;
+  }
+
+  .team-name{
+    font-size:13px;
   }
 }
