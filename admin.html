@@ -1,75 +1,79 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Junior JOI Admin</title>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Junior JOI Admin</title>
+<style>
+:root{--red:#c8101e;--ink:#171a1f;--muted:#6f7782;--line:#dfe4e8;--bg:#f3f5f7}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+button,input,select,textarea{font:inherit}.hidden{display:none!important}
+header{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 22px;position:sticky;top:0;z-index:20;box-shadow:0 3px 14px rgba(0,0,0,.05)}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:54px;height:54px;object-fit:contain}.brand strong{display:block;font-size:20px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+header a{color:var(--red);font-weight:700;text-decoration:none;border:1px solid #edc7ca;background:#fff7f8;padding:9px 12px;border-radius:8px}
+main{width:min(1240px,calc(100% - 26px));margin:auto;padding:26px 0 48px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 8px 24px rgba(17,24,39,.05)}
+.card h1,.card h2{margin:0 0 16px}.kicker{display:block;color:var(--red);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.head{display:flex;justify-content:space-between;gap:14px;align-items:center}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end}.full{grid-column:1/-1}
+label{font-size:12px;font-weight:700;color:#353b43}input,select,textarea{width:100%;margin-top:6px;padding:11px 12px;border:1px solid #ccd3da;border-radius:8px;background:#fff;color:#111;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(200,16,30,.08)}
+.btn{border:0;border-radius:8px;padding:10px 14px;font-weight:800;font-size:12px;cursor:pointer}.primary{background:var(--red);color:#fff}.dark{background:#252a31;color:#fff}.danger{background:#fff0f1;color:#b20d17;border:1px solid #efc1c5}
+.muted{color:var(--muted);font-size:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff}table{width:100%;border-collapse:collapse;min-width:900px;background:#fff}
+th{background:#f0f2f4;color:#414852;text-align:left;padding:12px;font-size:11px;text-transform:uppercase}td{padding:12px;border-bottom:1px solid #eceff2;background:#fff;color:#1e2329}
+#login-card{max-width:760px;margin:44px auto;border-top:4px solid var(--red)}#login-card .form{grid-template-columns:1fr 1fr auto}
+@media(max-width:900px){.form{grid-template-columns:repeat(2,1fr)}#login-card .form{grid-template-columns:1fr}}
+@media(max-width:600px){header{padding:9px 13px}.brand img{width:44px;height:44px}.brand strong{font-size:16px}.brand small{font-size:9px}main{width:calc(100% - 18px);padding-top:16px}.card{padding:16px}.form{grid-template-columns:1fr}.full{grid-column:1}.head{align-items:flex-start;flex-direction:column}.head .btn{width:100%}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/joi-logo.png" alt="Junior JOI logo">
-      <div><strong>JUNIOR JOI ADMIN</strong><small>Private organiser dashboard</small></div>
+<header>
+  <div class="brand"><img src="assets/joi-logo.png" alt="Junior JOI logo"><div><strong>JUNIOR JOI ADMIN</strong><small>Private organiser dashboard</small></div></div>
+  <a href="index.html">Public site</a>
+</header>
+<main>
+<section id="login-card" class="card">
+  <span class="kicker">Private Access</span><h1>Admin Login</h1>
+  <div class="form">
+    <label>Email<input id="email" type="email"></label>
+    <label>Password<input id="password" type="password"></label>
+    <div><button id="login" class="btn primary">Sign In</button></div>
+  </div>
+  <p id="login-msg" class="muted"></p>
+</section>
+
+<section id="dashboard" class="hidden">
+  <div class="card"><div class="head"><div><span class="kicker">Tournament Control</span><h1>Control Centre</h1><p>Manage announcements, fixtures, scores and match status.</p></div><button id="logout" class="btn dark">Sign Out</button></div></div>
+
+  <div class="card">
+    <span class="kicker">Announcement</span><h2>Public Tournament Notice</h2>
+    <div class="form"><label class="full">Message<textarea id="announcement-message" rows="3"></textarea></label><div><button id="save-announcement" class="btn primary">Publish Announcement</button></div></div>
+  </div>
+
+  <div class="card">
+    <span class="kicker">Match Management</span><h2>Add or Edit Fixture</h2>
+    <input id="fixture-id" type="hidden">
+    <div class="form">
+      <label>Division<select id="division"><option>U14</option><option>U15</option></select></label>
+      <label>Game Number<input id="game-number" type="number"></label>
+      <label>Date<input id="match-date" type="date" value="2026-10-01"></label>
+      <label>Time<input id="match-time" type="time"></label>
+      <label>Venue<select id="venue"><option>APH 1</option><option>APH 2</option><option>GHS 1</option><option>GHS 2</option></select></label>
+      <label>Pool<select id="pool"></select></label>
+      <label>Home Team<select id="home-team"></select></label>
+      <label>Away Team<select id="away-team"></select></label>
+      <label>Home Score<input id="home-score" type="number" min="0"></label>
+      <label>Away Score<input id="away-score" type="number" min="0"></label>
+      <label>Status<select id="status"><option>Scheduled</option><option>Live</option><option>Completed</option><option>Postponed</option><option>Cancelled</option></select></label>
+      <label>Stage<input id="stage" value="Pool"></label>
+      <label class="full">Notes<textarea id="notes"></textarea></label>
+      <div class="full"><button id="save-fixture" class="btn primary">Save Fixture</button> <button id="clear-form" class="btn dark">Clear</button></div>
     </div>
-    <a href="index.html" style="color:white">Public site</a>
-  </header>
+  </div>
 
-  <main class="admin-wrap">
-    <section id="login-card" class="admin-card">
-      <h1>Admin Login</h1>
-      <div class="form">
-        <label>Email<input id="email" type="email"></label>
-        <label>Password<input id="password" type="password"></label>
-        <div style="align-self:end"><button id="login" class="btn btn-primary">Sign In</button></div>
-      </div>
-      <p id="login-msg" class="muted"></p>
-    </section>
-
-    <section id="dashboard" class="hidden">
-      <div class="admin-card">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-          <h1>Control Centre</h1>
-          <button id="logout" class="btn btn-dark">Sign Out</button>
-        </div>
-      </div>
-
-      <div class="admin-card">
-        <h2>Announcement</h2>
-        <div class="form">
-          <label class="full">Message<textarea id="announcement-message" rows="3"></textarea></label>
-          <div><button id="save-announcement" class="btn btn-primary">Publish Announcement</button></div>
-        </div>
-      </div>
-
-      <div class="admin-card">
-        <h2>Add or Edit Fixture</h2>
-        <input id="fixture-id" type="hidden">
-        <div class="form">
-          <label>Division<select id="division"><option>U14</option><option>U15</option></select></label>
-          <label>Game Number<input id="game-number" type="number"></label>
-          <label>Date<input id="match-date" type="date" value="2026-10-01"></label>
-          <label>Time<input id="match-time" type="time"></label>
-          <label>Venue<select id="venue"><option>APH 1</option><option>APH 2</option><option>GHS 1</option><option>GHS 2</option></select></label>
-          <label>Pool<select id="pool"></select></label>
-          <label>Home Team<select id="home-team"></select></label>
-          <label>Away Team<select id="away-team"></select></label>
-          <label>Home Score<input id="home-score" type="number" min="0"></label>
-          <label>Away Score<input id="away-score" type="number" min="0"></label>
-          <label>Status<select id="status"><option>Scheduled</option><option>Live</option><option>Completed</option><option>Postponed</option><option>Cancelled</option></select></label>
-          <label>Stage<input id="stage" value="Pool"></label>
-          <label class="full">Notes<textarea id="notes"></textarea></label>
-          <div><button id="save-fixture" class="btn btn-primary">Save Fixture</button> <button id="clear-form" class="btn btn-dark">Clear</button></div>
-        </div>
-      </div>
-
-      <div class="admin-card">
-        <h2>Fixtures</h2>
-        <div id="admin-fixtures"></div>
-      </div>
-    </section>
-  </main>
-
-  <script type="module" src="js/admin.js"></script>
+  <div class="card"><span class="kicker">Tournament Schedule</span><h2>Fixtures</h2><div id="admin-fixtures"></div></div>
+</section>
+</main>
+<script type="module" src="js/admin.js"></script>
 </body>
 </html>
