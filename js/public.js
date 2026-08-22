@@ -249,6 +249,7 @@ function renderAll() {
     }).join('');
 
   renderFixtures();
+  renderSchoolWall();
 
   document.querySelector('#results-table').innerHTML =
     table(fixtures.filter(f => f.status === 'Completed'));
@@ -295,6 +296,22 @@ function renderAll() {
         </div>
       </div>
     `).join('');
+}
+
+function renderSchoolWall() {
+  const target = document.querySelector('#school-wall');
+  if (!target) return;
+
+  const unique = [...teams].sort((a,b) => (a.name || '').localeCompare(b.name || ''));
+  target.innerHTML = unique.map(t => `
+    <article class="school-card">
+      ${badge(t.id, true)}
+      <div>
+        <strong>${t.name}</strong>
+        <small>${t.division || 'U14 / U15'}${t.short_name ? ' • ' + t.short_name : ''}</small>
+      </div>
+    </article>
+  `).join('') || '<div class="empty-state">Participating schools will appear once loaded.</div>';
 }
 
 function renderFixtures() {

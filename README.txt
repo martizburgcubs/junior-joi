@@ -15,3 +15,9 @@ Standings currently use:
 - Tiebreak: log points, points difference, points scored
 
 Confirm the official tournament rules before the event.
+
+
+SAFE POLISH UPDATE:
+- Fixtures, results, Supabase config and admin logic were not replaced.
+- Visual styling was improved through css/styles.css.
+- A public school badge wall was added using the live teams already loaded from Supabase.
